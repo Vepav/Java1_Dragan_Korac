@@ -7,7 +7,9 @@ public class Television {
     private boolean turnOn;
 
     public Television() {
-        currentProgram = 0;
+        this.volume = 0;
+        this.currentProgram = 1;
+        this.turnOn = false;
     }
 
     public Television(int volume, int currentProgram, boolean turnOn) {
@@ -17,35 +19,35 @@ public class Television {
 
     }
 
+    public void setVolume(int newVolume) {
+        this.volume = newVolume;
+    }
+
     public int getVolume() {
-        return volume;
-    }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    public int getcurrentProgram() {
-        return currentProgram;
+        return this.volume;
     }
 
     public void setcurrentProgram(int currentProgram) {
         this.currentProgram = currentProgram;
     }
 
-    public boolean getturnOn() {
-        return turnOn;
+    public int getcurrentProgram() {
+        return this.currentProgram;
     }
 
-    public void setturnOn(boolean turnOn) {
+    public void setTurnOn(boolean turnOn) {
         this.turnOn = turnOn;
-
     }
 
-    public void showData() {
-        System.out.println("Jačina je: " + getVolume());
-        System.out.println("Trenutni program je: " + getcurrentProgram());
-        System.out.println("Uključeno: " + getturnOn());
+    public boolean getTurnOn() {
+        return this.turnOn;
+    }
+
+    public void info() {
+        System.out.println("Current program is: " + getcurrentProgram());
+        System.out.println("Volume is: " + getVolume());
+        System.out.println("Turn on: " + getTurnOn());
+      
     }
 
 }
